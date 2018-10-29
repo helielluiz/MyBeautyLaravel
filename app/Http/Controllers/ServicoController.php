@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Servico;
-use App\Http\Resources\ServicosResource;
+use App\Http\Resources\ServicoResource;
 
 class ServicoController extends Controller
 {
@@ -15,7 +15,7 @@ class ServicoController extends Controller
      */
     public function index()
     {
-        return ServicosResource::collection(Servico::with('servico')->paginate(25));
+        return ServicoResource::collection(Servico::with('servico')->paginate(25));
     }
 
     /**
@@ -28,10 +28,10 @@ class ServicoController extends Controller
     {
         $servico = Servico::create([
             'id_servico' => $request->idt_servico,
-            'nm_servico' => $reques->nm_servico,
+            'nm_servico' => $request->nm_servico,
         ]);
 
-        return new ServicosResource($servico);
+        return new ServicoResource($servico);
     }
 
     /**
@@ -42,7 +42,7 @@ class ServicoController extends Controller
      */
     public function show(Servico $servico)
     {
-        return new ServicosResource($servico);
+        return new ServicoResource($servico);
     }
 
     /**

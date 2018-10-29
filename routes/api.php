@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('servicos', 'ServicoController');
 Route::post('servicos/{servico}', 'ServicoController@store');
+
