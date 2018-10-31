@@ -15,7 +15,7 @@ class ServicoController extends Controller
      */
     public function index()
     {
-        return ServicoResource::collection(Servico::with('servico')->paginate(25));
+        return ServicoResource::collection(Servico::all());
     }
 
     /**
@@ -27,7 +27,7 @@ class ServicoController extends Controller
     public function store(Request $request)
     {
         $servico = Servico::create([
-            'id_servico' => $request->idt_servico,
+            'id_servico' => $request->id_servico,
             'nm_servico' => $request->nm_servico,
         ]);
 

@@ -4,8 +4,8 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Servico extends Model
+class Estado extends Model
 {
-    protected $fillable = ['id_servico','nm_servico'];
+    protected $fillable = ['Id_estado','Nm_uf','Nm_estado'];
     public $timestamps = false; 
 }
