@@ -13,9 +13,13 @@ class CreateAtendentesTable extends Migration
      */
     public function up()
     {
-        Schema::create('atendentes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('Atendentes', function (Blueprint $table) {
+            $table->increments('Id_atendente');
+            $table->unsignedInteger('Id_estabelecimento');
+            $table->string('Nm_atendente', 100);
+            $table->string('Observacao', 1000);
+            $table->enum('Ativo',['S','N'])->default('S');
+            $table->timestamps('Dt_bloqueio');
         });
     }
 
@@ -26,6 +30,6 @@ class CreateAtendentesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('atendentes');
+        Schema::dropIfExists('Atendentes');
     }
 }

@@ -13,9 +13,9 @@ class CreateServicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('servicos', function (Blueprint $table) {
-            $table->increments('id_servico');
-            $table->string('nm_servico');
+        Schema::create('Servico', function (Blueprint $table) {
+            $table->increments('Id_servico');
+            $table->string('Nm_servico', 100);
         });
     }
 
@@ -26,6 +26,6 @@ class CreateServicosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servicos');
+        Schema::dropIfExists('Servico');
     }
 }

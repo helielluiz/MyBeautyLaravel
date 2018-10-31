@@ -13,9 +13,15 @@ class CreateServicoDoEstabelecimentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('servico_do_estabelecimentos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('ServicoDoEstabelecimento', function (Blueprint $table) {
+            $table->unsignedInteger('Id_servico');
+            $table->unsignedInteger('Id_servico');
+            $table->decimal('Valor',18,2);
+            $table->decimal('Valor_desconto',18,2);
+            $table->enum('ApenasLocal', ['S','N'])->default('S');
+            $table->string('Observacao', 1000);
+            $table->enum('Ativo', ['S','N'])->default('S');
+            $table->timestamps('Dt_bloqueio');
         });
     }
 

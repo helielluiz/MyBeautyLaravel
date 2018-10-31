@@ -13,9 +13,11 @@ class CreateCidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cidades', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('Cidade', function (Blueprint $table) {
+            $table->increments('Id_cidade');
+            $table->strign('Nr_ibge',7);
+            $table->string('Nm_cidade',100);
+            $table->unsignedInteger('Id_estado');
         });
     }
 
@@ -26,6 +28,6 @@ class CreateCidadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cidades');
+        Schema::dropIfExists('Cidade');
     }
 }

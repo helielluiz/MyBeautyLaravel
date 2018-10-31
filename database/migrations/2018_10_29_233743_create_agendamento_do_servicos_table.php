@@ -13,9 +13,14 @@ class CreateAgendamentoDoServicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('agendamento_do_servicos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('AgendaDeServico', function (Blueprint $table) {
+            $table->unsignedInteger('Id_atendente');
+            $table->unsignedInteger('Id_servico');
+            $table->unsignedInteger('Id_estabelecimento');
+            $table->timestamps('Dt_agendamento');
+            $table->string('Status', 9);
+            $table->date('Dt_execucao');
+            $table->string('UsuarioDeExecucao', 100);
         });
     }
 
@@ -26,6 +31,6 @@ class CreateAgendamentoDoServicosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agendamento_do_servicos');
+        Schema::dropIfExists('AgendaDeServico');
     }
 }

@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Servico extends Model
 {
-    protected $fillable = ['id_servico','nm_servico'];
+    protected $fillable = ['Id_servico','Nm_servico'];
     public $timestamps = false; 
 }

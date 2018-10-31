@@ -13,9 +13,10 @@ class CreateServicoDoAtendentesTable extends Migration
      */
     public function up()
     {
-        Schema::create('servico_do_atendentes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('AtendenteXServico', function (Blueprint $table) {
+            $table->increments('id_atendente');
+            $table->increments('id_servico');
+            $table->increments('id_estabelecimento');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateServicoDoAtendentesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servico_do_atendentes');
+        Schema::dropIfExists('AtendenteXServico');
     }
 }
