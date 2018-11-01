@@ -19,7 +19,7 @@ class CreateAtendentesTable extends Migration
             $table->string('Nm_atendente', 100);
             $table->string('Observacao', 1000);
             $table->enum('Ativo',['S','N'])->default('S');
-            $table->timestamps('Dt_bloqueio');
+            $table->timestamp('Dt_bloqueio');
         });
     }
 

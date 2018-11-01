@@ -28,12 +28,12 @@ class CreateEstabelecimentosTable extends Migration
             $table->integer('Nr_dddcelular')->default(0);
             $table->integer('Nr_celular')->default(0);
             $table->string('Email', 100);
-            $table->timestamps('Dt_cadastro');
+            $table->timestamp('Dt_cadastro');
             $table->enum('Ativo',['S','N'])->default('S');
-            $table->timestamps('Dt_bloqueio');
-            $tabel->string('Observacao', 1000);
-            $table->timestamps('HorarioInicial');
-            $table->timestamps('HorarioFinal');
+            $table->timestamp('Dt_bloqueio');
+            $table->string('Observacao', 1000);
+            $table->timestamp('HorarioInicial');
+            $table->timestamp('HorarioFinal');
         });
     }
 

@@ -17,7 +17,7 @@ class CreateAgendamentoDoServicosTable extends Migration
             $table->unsignedInteger('Id_atendente');
             $table->unsignedInteger('Id_servico');
             $table->unsignedInteger('Id_estabelecimento');
-            $table->timestamps('Dt_agendamento');
+            $table->timestamp('Dt_agendamento');
             $table->string('Status', 9);
             $table->date('Dt_execucao');
             $table->string('UsuarioDeExecucao', 100);

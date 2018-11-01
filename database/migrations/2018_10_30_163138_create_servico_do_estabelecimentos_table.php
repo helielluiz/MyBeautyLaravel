@@ -15,13 +15,13 @@ class CreateServicoDoEstabelecimentosTable extends Migration
     {
         Schema::create('ServicoDoEstabelecimento', function (Blueprint $table) {
             $table->unsignedInteger('Id_servico');
-            $table->unsignedInteger('Id_servico');
+            $table->unsignedInteger('Id_estabelecimento');
             $table->decimal('Valor',18,2);
             $table->decimal('Valor_desconto',18,2);
             $table->enum('ApenasLocal', ['S','N'])->default('S');
             $table->string('Observacao', 1000);
             $table->enum('Ativo', ['S','N'])->default('S');
-            $table->timestamps('Dt_bloqueio');
+            $table->timestamp('Dt_bloqueio');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateServicoDoEstabelecimentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servico_do_estabelecimentos');
+        Schema::dropIfExists('ServicoDoEstabelecimento');
     }
 }

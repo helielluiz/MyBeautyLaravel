@@ -23,9 +23,9 @@ class CreateUsuariosTable extends Migration
             $table->string('Senha', 50);
             $table->string('ConfirmaSenha',50);
             $table->unsignedInteger('Id_cidade');
-            $table->timestamps('Dt_cadastro');
+            $table->timestamp('Dt_cadastro');
             $table->enum('Ativo',['S','N']);
-            $table->timestaps('Dt_bloqueio');
+            $table->timestamp('Dt_bloqueio');
             $table->string('Observacao',200);
         });
     }

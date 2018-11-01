@@ -14,9 +14,9 @@ class CreateServicoDoAtendentesTable extends Migration
     public function up()
     {
         Schema::create('AtendenteXServico', function (Blueprint $table) {
-            $table->increments('id_atendente');
-            $table->increments('id_servico');
-            $table->increments('id_estabelecimento');
+            $table->unsignedInteger('id_atendente');
+            $table->unsignedInteger('id_servico');
+            $table->unsignedInteger('id_estabelecimento');
         });
     }
 
