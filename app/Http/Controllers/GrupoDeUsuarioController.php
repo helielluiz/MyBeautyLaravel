@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Servico;
-use App\Http\Resources\ServicoResource;
+use App\Model\GrupoDeUsuario;
+use App\Http\Resources\GrupoDeUsuarioResource;
 
-class ServicoController extends Controller
+class GrupoDeUsuarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ServicoController extends Controller
      */
     public function index()
     {
-        return ServicoResource::collection(Servico::all());
+        return GrupoDeUsuarioResource::collection(GrupoDeUsuario::all());
     }
 
     /**
@@ -26,12 +26,12 @@ class ServicoController extends Controller
      */
     public function store(Request $request)
     {
-        $servico = Servico::create([
-            'Id_servico' => $request->Id_servico,
-            'Nm_servico' => $request->Nm_servico,
+        $grupodeusuario = GrupoDeUsuario::create([
+            'Id_grupodeusuario' => $request->Id_grupodeusuario,
+			'Nm_grupodeusuario' => $request->Nm_grupodeusuario,
         ]);
 
-        return new ServicoResource($servico);
+        return new GrupoDeUsuarioResource($grupodeusuario);
     }
 
     /**
@@ -40,9 +40,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Servico $servico)
+    public function show(GrupoDeUsuario $grupodeusuario)
     {
-        return new ServicoResource($servico);
+        return new GrupoDeUsuarioResource($grupodeusuario);
     }
 
     /**
@@ -52,13 +52,13 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Servico $servico)
+    public function update(Request $request, GrupoDeUsuario $grupodeusuario)
     {
-        if($request->Id_servico !== $servico->Id_servico){
-            return response()->json(['Erro' => 'Erro ao localizar Serviço'], 403);
+        if($request->Id_grupodeusuario !== $grupodeusuario->Id_grupodeusuario){
+            return response()->json(['Erro' => 'Erro ao localizar Grupo de Usuario'], 403);
         }
 
-        $servico->update($request->only(['Nm_servico']));
+        $grupodeusuario->update($request->only(['Nm_grupodeusuario']));
     }
 
     /**
@@ -67,9 +67,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Servico $servico)
+    public function destroy(GrupoDeUsuario $grupodeusuario)
     {
-        $servico->delete();
+        $grupodeusuario->delete();
 
         return response()->json(null, 204);
     }

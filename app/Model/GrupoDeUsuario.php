@@ -8,4 +8,5 @@ class GrupoDeUsuario extends Model
 {
     protected $fillable = ['Id_grupodeusuario','Nm_grupodeusuario'];
     public $timestamps = false; 
+    protected $table = 'GrupoDeUsuario';
 }

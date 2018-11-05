@@ -8,4 +8,5 @@ class Servico extends Model
 {
     protected $fillable = ['Id_servico','Nm_servico'];
     public $timestamps = false; 
+    protected $table = 'Servico';
 }

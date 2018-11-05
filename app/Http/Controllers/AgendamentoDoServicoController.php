@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Servico;
-use App\Http\Resources\ServicoResource;
+use App\Model\AgendamentoDoServico;
+use App\Http\Resources\AgendamentoDoServicoResource;
 
-class ServicoController extends Controller
+class AgendamentoDoServicoController extends Controller
 {
-    /**
+	/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return ServicoResource::collection(Servico::all());
+        return AgendamentoDoServicoResource::collection(AgendamentoDoServico::all());
     }
 
     /**
@@ -26,12 +26,11 @@ class ServicoController extends Controller
      */
     public function store(Request $request)
     {
-        $servico = Servico::create([
-            'Id_servico' => $request->Id_servico,
-            'Nm_servico' => $request->Nm_servico,
+        $agendamentodoservico = AgendamentoDoServico::create([
+
         ]);
 
-        return new ServicoResource($servico);
+        return new AgendamentoDoServicoResource($agendamentodoservico);
     }
 
     /**
@@ -40,9 +39,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Servico $servico)
+    public function show(AgendamentoDoServico $agendamentodoservico)
     {
-        return new ServicoResource($servico);
+        return new AgendamentoDoServicoResource($agendamentodoservico);
     }
 
     /**
@@ -52,13 +51,13 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Servico $servico)
+    public function update(Request $request, AgendamentoDoServico $agendamentodoservico)
     {
-        if($request->Id_servico !== $servico->Id_servico){
-            return response()->json(['Erro' => 'Erro ao localizar Serviço'], 403);
+        if($request->Id_servico !== $agendamentodoservico->Id_servico){
+            return response()->json(['Erro' => 'Erro ao localizar AgendamentoDoAgendamentoDoServicoResource'], 403);
         }
 
-        $servico->update($request->only(['Nm_servico']));
+        $agendamentodoservico->update($request->only(['']));
     }
 
     /**
@@ -67,9 +66,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Servico $servico)
+    public function destroy(AgendamentoDoServico $agendamentodoservico)
     {
-        $servico->delete();
+        $agendamentodoservico->delete();
 
         return response()->json(null, 204);
     }

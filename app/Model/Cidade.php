@@ -8,4 +8,5 @@ class Cidade extends Model
 {
     protected $fillable = ['Id_cidade','Nr_ibge','Nm_cidade','Id_estado'];
     public $timestamps = false; 
+    protected $table = 'Cidade';
 }

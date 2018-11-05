@@ -8,4 +8,5 @@ class ServicoDoAtendente extends Model
 {
     protected $fillable = ['Id_atendente','Id_servico','Id_estabelecimento',];
     public $timestamps = false; 
+    protected $table = 'ServicoDoAtendente';
 }

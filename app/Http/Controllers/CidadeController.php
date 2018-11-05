@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Servico;
-use App\Http\Resources\ServicoResource;
+use App\Model\Cidade;
+use App\Http\Resources\CidadeResource;
 
-class ServicoController extends Controller
+class CidadeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ServicoController extends Controller
      */
     public function index()
     {
-        return ServicoResource::collection(Servico::all());
+        return CidadeResource::collection(Cidade::all());
     }
 
     /**
@@ -26,12 +26,14 @@ class ServicoController extends Controller
      */
     public function store(Request $request)
     {
-        $servico = Servico::create([
-            'Id_servico' => $request->Id_servico,
-            'Nm_servico' => $request->Nm_servico,
+        $cidade = Cidade::create([
+            'Id_cidade' => $request->Id_cidade,
+			'Nr_ibge' => $request->Nr_ibge,
+			'Nm_cidade' => $request->Nm_cidade,
+			'Id_estado' => $request->Id_estado,
         ]);
 
-        return new ServicoResource($servico);
+        return new CidadeResource($cidade);
     }
 
     /**
@@ -40,9 +42,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Servico $servico)
+    public function show(Cidade $cidade)
     {
-        return new ServicoResource($servico);
+        return new CidadeResource($cidade);
     }
 
     /**
@@ -52,13 +54,13 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Servico $servico)
+    public function update(Request $request, Cidade $cidade)
     {
-        if($request->Id_servico !== $servico->Id_servico){
+        if($request->Id_cidade !== $cidade->Id_cidade){
             return response()->json(['Erro' => 'Erro ao localizar Serviço'], 403);
         }
 
-        $servico->update($request->only(['Nm_servico']));
+        $cidade->update($request->only(['Nr_ibge','Nm_cidade','Id_estado']));
     }
 
     /**
@@ -67,9 +69,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Servico $servico)
+    public function destroy(Cidade $cidade)
     {
-        $servico->delete();
+        $cidade->delete();
 
         return response()->json(null, 204);
     }

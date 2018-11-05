@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Servico;
-use App\Http\Resources\ServicoResource;
+use App\Model\Estado;
+use App\Http\Resources\EstadoResource;
 
-class ServicoController extends Controller
+class EstadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ServicoController extends Controller
      */
     public function index()
     {
-        return ServicoResource::collection(Servico::all());
+        return EstadoResource::collection(Estado::all());
     }
 
     /**
@@ -26,12 +26,13 @@ class ServicoController extends Controller
      */
     public function store(Request $request)
     {
-        $servico = Servico::create([
-            'Id_servico' => $request->Id_servico,
-            'Nm_servico' => $request->Nm_servico,
+        $estado = Estado::create([
+            'Id_estado' => $request->Id_estado,
+            'Nm_estado' => $request->Nm_estado,
+            'Nm_uf' => $request->Nm_uf,
         ]);
 
-        return new ServicoResource($servico);
+        return new EstadoResource($estado);
     }
 
     /**
@@ -40,9 +41,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Servico $servico)
+    public function show(Estado $estado)
     {
-        return new ServicoResource($servico);
+        return new EstadoResource($estado);
     }
 
     /**
@@ -52,13 +53,13 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Servico $servico)
+    public function update(Request $request, Estado $estado)
     {
-        if($request->Id_servico !== $servico->Id_servico){
-            return response()->json(['Erro' => 'Erro ao localizar Serviço'], 403);
+        if($request->Id_estado !== $estado->Id_estado){
+            return response()->json(['Erro' => 'Erro ao localizar Estado'], 403);
         }
 
-        $servico->update($request->only(['Nm_servico']));
+        $estado->update($request->only(['Nm_estado','Nm_uf']));
     }
 
     /**
@@ -67,9 +68,9 @@ class ServicoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Servico $servico)
+    public function destroy(Estado $estado)
     {
-        $servico->delete();
+        $estado->delete();
 
         return response()->json(null, 204);
     }

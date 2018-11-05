@@ -17,6 +17,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('servicos', 'ServicoController');
-Route::post('servicos/{servico}', 'ServicoController@store');
+Route::apiResource('Servico', 'ServicoController');
+Route::post('Servico/{Servico}', 'ServicoController@store');
+
+Route::apiResource('Cidade', 'CidadeController');
+Route::post('Cidade/{Cidade}', 'CidadeController@store');
+
+Route::apiResource('Estado', 'EstadoController');
+Route::post('Estado/{Estado}', 'EstadoController@store');
+Route::put('Estado/{Estado}', 'EstadoController@update');
+Route::get('Estado/{Estado}', 'EstadoController@show');
 

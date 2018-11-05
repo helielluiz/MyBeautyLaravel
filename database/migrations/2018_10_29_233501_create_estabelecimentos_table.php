@@ -14,26 +14,26 @@ class CreateEstabelecimentosTable extends Migration
     public function up()
     {
         Schema::create('Estabelecimento', function (Blueprint $table) {
-            $table->increments('Id_estabelecimento');
-            $table->string('Nr_cnpj', 14);
-            $table->string('Nm_estabelecimento', 100);
-            $table->string('Endereco', 250);
+            $table->increments('Id_estabelecimento')->nullable();
+            $table->string('Nr_cnpj', 14)->nullable();
+            $table->string('Nm_estabelecimento', 100)->nullable();
+            $table->string('Endereco', 250)->nullable();
             $table->integer('Nr_estabelecimento')->default(0);
-            $table->string('Complemento',200);
-            $table->string('Bairro',200);
-            $table->string('Cep',8)->nullable(false);
-            $table->integer('Id_cidade')->nullable(false);
-            $table->integer('Nr_dddtelefone')->nullable(false);
-            $table->integer('Nr_telefone')->nullable(false);
+            $table->string('Complemento',200)->nullable();
+            $table->string('Bairro',200)->nullable();
+            $table->string('Cep',8);
+            $table->integer('Id_cidade');
+            $table->integer('Nr_dddtelefone');
+            $table->integer('Nr_telefone');
             $table->integer('Nr_dddcelular')->default(0);
             $table->integer('Nr_celular')->default(0);
-            $table->string('Email', 100);
-            $table->timestamp('Dt_cadastro');
+            $table->string('Email', 100)->nullable();
+            $table->timestamp('Dt_cadastro')->nullable();
             $table->enum('Ativo',['S','N'])->default('S');
-            $table->timestamp('Dt_bloqueio');
-            $table->string('Observacao', 1000);
-            $table->timestamp('HorarioInicial');
-            $table->timestamp('HorarioFinal');
+            $table->timestamp('Dt_bloqueio')->nullable();
+            $table->string('Observacao', 1000)->nullable();
+            $table->timestamp('HorarioInicial')->nullable();
+            $table->timestamp('HorarioFinal')->nullable();
         });
     }
 

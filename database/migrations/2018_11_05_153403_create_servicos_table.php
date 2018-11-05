@@ -15,7 +15,7 @@ class CreateServicosTable extends Migration
     {
         Schema::create('Servico', function (Blueprint $table) {
             $table->increments('Id_servico');
-            $table->string('Nm_servico', 100);
+            $table->string('Nm_servico');
         });
     }
 
