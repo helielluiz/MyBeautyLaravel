@@ -19,7 +19,7 @@ class AtendenteResource extends JsonResource
             'Id_estabelecimento' => $this->Id_estabelecimento,
             'Nm_atendente' => $this->Nm_atendente,
             'Observacao' => $this->Observacao,
-            'Ativo' => $this->Ativo,
+            'ATIVO' => $this->ATIVO,
             'Dt_bloqueio' => $this->Dt_bloqueio,
         ];
     }

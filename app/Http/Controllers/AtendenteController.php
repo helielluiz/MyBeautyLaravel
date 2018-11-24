@@ -31,7 +31,7 @@ class AtendenteController extends Controller
 			'Id_estabelecimento' => $request->Id_estabelecimento,
 			'Nm_atendente' => $request->Nm_atendente,
 			'Observacao' => $request->Observacao,
-			'Ativo' => $request->Ativo,
+			'ATIVO' => $request->ATIVO,
 			'Dt_bloqueio' => $request->Dt_bloqueio,
         ]);
 

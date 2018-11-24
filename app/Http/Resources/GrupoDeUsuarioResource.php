@@ -17,6 +17,6 @@ class GrupoDeUsuarioResource extends JsonResource
         return [
             'Id_grupodeusuario' => $this->Id_grupodeusuario,
             'Nm_grupodeusuario' => $this->Nm_grupodeusuario,
-        ]);
+        ];
     }
 }
