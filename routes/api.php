@@ -18,22 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('Servico', 'ServicoController');
-Route::post('Servico/{Servico}', 'ServicoController@store');
-
-Route::apiResource('Cidade', 'CidadeController');
-Route::post('Cidade/{Cidade}', 'CidadeController@store');
-
-Route::apiResource('Estabelecimento', 'EstabelecimentoController');
-Route::post('Estabelecimento/{Estabelecimento}', 'EstabelecimentoController@store');
-
 Route::apiResource('ServicoDoEstabelecimento', 'ServicoDoEstabelecimentoController');
-Route::post('ServicoDoEstabelecimento/{ServicoDoEstabelecimento}', 'ServicoDoEstabelecimentoController@store');
-
+Route::apiResource('Cidade', 'CidadeController');
+Route::apiResource('Estabelecimento', 'EstabelecimentoController');
 Route::apiResource('Atendente', 'AtendenteController');
-Route::post('Atendente/{Atendente}', 'AtendenteController@store');
-
+Route::apiResource('AgendamentoDoServico', 'AgendamentoDoServicoController');
 Route::apiResource('Estado', 'EstadoController');
-Route::post('Estado/{Estado}', 'EstadoController@store');
-Route::put('Estado/update', 'EstadoController@update');
-Route::get('Estado/{Estado}', 'EstadoController@show');
 

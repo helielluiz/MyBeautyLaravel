@@ -19,7 +19,6 @@ class AgendamentoDoServicoResource extends JsonResource
             'Id_servico' => $this->Id_servico,
             'Id_estabelecimento' => $this->Id_estabelecimento,
             'Dt_agendamento' => $this->Dt_agendamento,
-            'Status' => $this->Status,
             'Dt_execucao' => $this->Dt_execucao,
             'UsuarioDeExecucao' => $this->UsuarioDeExecucao,
         ];

@@ -8,5 +8,5 @@ class AgendamentoDoServico extends Model
 {
     protected $fillable = ['Id_atendente','Id_servico','Id_estabelecimento','Dt_agendamento','Status','Dt_execucao','UsuarioDeExecucao',];
     public $timestamps = false; 
-    protected $table = 'AgendamentoDoServico';
+    protected $table = 'AgendaDeServico';
 }
