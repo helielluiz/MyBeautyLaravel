@@ -58,7 +58,7 @@ class AtendenteController extends Controller
      */
     public function update(Request $request, Atendente $atendente)
     {
-        if($request->'Id_atendente' !== $atendente->Id_atendente){
+        if($request->Id_atendente !== $atendente->Id_atendente){
             return response()->json(['Erro' => 'Erro ao localizar Atendente'], 403);
         }
 

@@ -29,6 +29,9 @@ Route::post('Estabelecimento/{Estabelecimento}', 'EstabelecimentoController@stor
 Route::apiResource('ServicoDoEstabelecimento', 'ServicoDoEstabelecimentoController');
 Route::post('ServicoDoEstabelecimento/{ServicoDoEstabelecimento}', 'ServicoDoEstabelecimentoController@store');
 
+Route::apiResource('Atendente', 'AtendenteController');
+Route::post('Atendente/{Atendente}', 'AtendenteController@store');
+
 Route::apiResource('Estado', 'EstadoController');
 Route::post('Estado/{Estado}', 'EstadoController@store');
 Route::put('Estado/update', 'EstadoController@update');
