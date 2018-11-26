@@ -31,7 +31,8 @@ class AgendamentoDoServicoController extends Controller
             'Id_atendente' => $request->Id_atendente,
             'Id_servico' => $request->Id_servico,
             'Id_estabelecimento' => $request->Id_estabelecimento,
-            'Dt_agendamento' => $request->Dt_agendamento
+            'Dt_agendamento' => $request->Dt_agendamento,
+            'UsuarioDeExecucao' => $request->UsuarioDeExecucao
 
         ]);
 
